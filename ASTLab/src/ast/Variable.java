@@ -1,0 +1,41 @@
+package ast;
+
+import environment.Environment;
+
+/**
+ * The Variable class encapsulates a single String value.  With this value,
+ * a Variable object can emulate a single undeclared variable.  The Variable's
+ * eval method declares the variable by adding it to the provided Environment
+ * object.
+ * 
+ * @author hkunda
+ * @date March 17, 2015
+ */
+public class Variable extends Expression
+{
+    private String name;
+    
+    /**
+     * Creates a new instance of the Variable class that encapsulates a
+     * single String value.
+     * @param name the name of the variable that this object represents
+     */
+    public Variable(String name)
+    {
+        this.name = name;
+    }
+    
+    /**
+     * Returns the integer value stored within the variable.  The integer value
+     * is accessed through the provided Environment object.
+     * 
+     * @param env the Environment object that stores known variables
+     * 
+     * @return the value stored within the variable (as determined by the
+     * Environment)
+     */
+    public int eval(Environment env)
+    {
+        return env.getVariable(name);
+    }
+}

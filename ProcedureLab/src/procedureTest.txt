@@ -1,0 +1,13 @@
+PROCEDURE max(x, y);
+BEGIN
+max := x;
+IF y > x THEN max := y;
+END;
+
+BEGIN
+x := 4;
+y := 5;
+val := max(y - 1, x - 2);
+WRITELN(val);
+END;
+.
